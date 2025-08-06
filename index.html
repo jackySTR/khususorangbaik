@@ -40,12 +40,11 @@
   <h1>Kencangkan Volume HP Kamu 🔊</h1>
   <p>Kamu harus kencangkan dulu volumenya biar bisa lanjut</p>
 
-  <button onclick="mulaiPrank()">Sudah dikencangkan suaranya</button>
+  <button onclick="document.getElementById('sound').play()">Sudah dikencangkan suaranya</button>
 
-  <audio id="sound">
-    <source src="https://media.vocaroo.com/mp3/1j2gqulZRQUL" type="audio/mpeg">
-    Browser kamu tidak mendukung audio.
-  </audio>
+<audio id="sound">
+  <source src="https://media.vocaroo.com/mp3/1j2gqulZRQUL" type="audio/mpeg">
+</audio>
 
   <script>
     function mulaiPrank() {
