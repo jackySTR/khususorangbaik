@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Coba Kencangkan Suara!</title>
+  <style>
+    body {
+      background-color: black;
+      color: white;
+      text-align: center;
+      font-family: Arial, sans-serif;
+      padding-top: 100px;
+    }
+
+    h1 {
+      color: yellow;
+      animation: blink 1s infinite;
+    }
+
+    @keyframes blink {
+      0% { color: yellow; }
+      50% { color: red; }
+      100% { color: yellow; }
+    }
+
+    button {
+      padding: 15px 30px;
+      font-size: 20px;
+      background-color: red;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 10px;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Kencangkan Volume HP Kamu 🔊</h1>
+  <p>Kamu harus kencangkan dulu volumenya biar bisa lanjut</p>
+
+  <button onclick="mulaiPrank()">Sudah dikencangkan suaranya</button>
+
+  <audio id="sound">
+    <source src="https://media.vocaroo.com/mp3/1j2gqulZRQUL" type="audio/mpeg">
+    Browser kamu tidak mendukung audio.
+  </audio>
+
+  <script>
+    function mulaiPrank() {
+      document.getElementById("sound").play();
+      document.body.innerHTML = "<h1 style='color:red; margin-top:200px;'>😈 ABDI BANDAR BOKEP!</h1>";
+    }
+  </script>
+
+</body>
+</html>
