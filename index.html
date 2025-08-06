@@ -33,6 +33,13 @@
       margin-top: 50px;
       cursor: pointer;
     }
+
+    #prankText {
+      margin-top: 100px;
+      color: red;
+      font-size: 2rem;
+      display: none;
+    }
   </style>
 </head>
 <body>
@@ -40,17 +47,18 @@
   <h1>Kencangkan Volume HP Kamu 🔊</h1>
   <p>Lalu klik tombol di bawah ini</p>
 
-  <!-- Perbaikan di sini -->
   <button onclick="mulaiPrank()">Sudah dikencangkan suaranya</button>
 
   <audio id="sound">
     <source src="https://media.vocaroo.com/mp3/1j2gqulZRQUL" type="audio/mpeg">
   </audio>
 
+  <div id="prankText">😈 ABDI BANDAR BOKEP!</div>
+
   <script>
     function mulaiPrank() {
       document.getElementById("sound").play();
-      document.body.innerHTML = "<h1 style='color:red; margin-top:200px;'>😈 ABDI BANDAR BOKEP!</h1>";
+      document.getElementById("prankText").style.display = "block";
     }
   </script>
 
