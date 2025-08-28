@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spammer Webhook Jacky</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 flex items-center justify-center min-h-screen">
+  <div class="bg-gray-800 text-white rounded-2xl shadow-lg p-6 w-full max-w-md">
+    <h1 class="text-2xl font-bold text-center mb-6">SPAMMER Webhook Jacky</h1>
+
+    <label class="block mb-2">Masukkan Webhook URL</label>
+    <input id="webhook" type="text" placeholder="https://..." 
+      class="w-full p-2 rounded-lg text-black mb-4">
+
+    <label class="block mb-2">Masukkan Teksnya</label>
+    <input id="message" type="text" placeholder="Pesan kamu..."
+      class="w-full p-2 rounded-lg text-black mb-4">
+
+    <label class="block mb-2">Berapa jumlah yg ingin dikirimkan?</label>
+    <input id="count" type="number" value="5"
+      class="w-full p-2 rounded-lg text-black mb-4">
+
+    <button onclick="startSpam()" 
+      class="w-full bg-red-500 hover:bg-red-600 transition p-3 rounded-lg font-bold">
+      MULAI SPAM
+    </button>
+
+    <p id="status" class="text-center mt-4 text-gray-300"></p>
+  </div>
+
+  <script>
+    async function startSpam() {
+      const webhook = document.getElementById('webhook').value;
+      const message = document.getElementById('message').value;
+      const count = parseInt(document.getElementById('count').value);
+
+      document.getElementById('status').innerText = "Mengirim...";
+
+      const res = await fetch('/api/spam', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ webhook, message, count })
+      });
+
+      const data = await res.json();
+      document.getElementById('status').innerText = data.status;
+    }
+  </script>
+</body>
+</html>
